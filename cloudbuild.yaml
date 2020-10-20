@@ -17,15 +17,7 @@ steps:
 
   - id: "Compilando app"
     name: "gcr.io/cloud-builders/go"
-    args:
-      [
-        "build",
-        "-ldflags",
-        '''-w -s -extldflags "-static"''',
-        "-a",
-        "-o",
-        "soma",
-      ]
+    args: ["build", "-ldflags", '''-extldflags "-static"''', "-a", "-o", "soma"]
     env:
       - "GOPATH=${_GOPATH}"
       - "CGO_ENABLED=0"
