@@ -5,7 +5,7 @@
 steps:
   - id: "Executando teste"
     name: "golang"
-    args:["go", "test"]
+    args: ["go", "test"]
     env:
       - "GOPATH=${_GOPATH}"
 
@@ -14,12 +14,21 @@ steps:
     args: ["go", "run", "soma.go"]
     env:
       - "GOPATH=${_GOPATH}"
-  
-  - id: "Compilando app"    
+
+  - id: "Compilando app"
     name: "golang"
-    args: ["go", "build", "-ldflags", "'-w -s -extldflags \"-static\"'", "-a", "-o", "soma" ]
+    args:
+      [
+        "go",
+        "build",
+        "-ldflags",
+        '''-w -s -extldflags "-static"''',
+        "-a",
+        "-o",
+        "soma",
+      ]
     env:
-      - "GOPATH=${_GOPATH}"      
+      - "GOPATH=${_GOPATH}"
       - "CGO_ENABLED=0"
       - "GOOS=linux"
       - "GOARCH=amd64"
