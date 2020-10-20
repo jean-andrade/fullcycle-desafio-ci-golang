@@ -43,4 +43,4 @@ steps:
 images:
   - "gcr.io/$PROJECT_ID/goapp-soma:latest"
 substitutions:
-  _GOPATH: github.com/jean-andrade/fullcycle-desafio-ci-golang
+  _GOPATH: ./github.com/jean-andrade/fullcycle-desafio-ci-golang
