@@ -1,6 +1,6 @@
 # In this directory, run the following command to build this builder.
 # $ gcloud builds submit . --config=cloudbuild.yaml
-# https://www.ianlewis.org/en/building-go-applications-google-container-builder
+# https://github.com/Jake-Mok-Nelson/Golang-CI-Demo
 
 steps:
   - id: "Executando teste"
@@ -18,14 +18,7 @@ steps:
   - id: "Compilando app"
     name: "gcr.io/cloud-builders/go"
     args:
-      [
-        "build",
-        "-ldflags",
-        '''-w -s -extldflags "-static"''',
-        "-a",
-        "-o",
-        "soma",
-      ]
+      ["build", '-ldflags=''-w -s -extldflags "-static"''', "-a", "-o", "soma"]
     env:
       - "GOPATH=${_GOPATH}"
       - "CGO_ENABLED=0"
