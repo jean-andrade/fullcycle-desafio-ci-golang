@@ -1,3 +1,3 @@
 FROM scratch
-COPY ./bin/soma /app/soma
+COPY ./soma /app/soma
 ENTRYPOINT ["/app/soma"]
