@@ -4,22 +4,21 @@
 
 steps:
   - id: "Executando teste"
-    name: "golang"
-    args: ["go", "test", "soma"]
+    name: "gcr.io/cloud-builders/go"
+    args: ["test", "soma"]
     env:
       - "GOPATH=${_GOPATH}"
 
   - id: "Executando App"
-    name: "golang"
-    args: ["go", "run", "soma"]
+    name: "gcr.io/cloud-builders/go"
+    args: ["run", "soma"]
     env:
       - "GOPATH=${_GOPATH}"
 
   - id: "Compilando app"
-    name: "golang"
+    name: "gcr.io/cloud-builders/go"
     args:
       [
-        "go",
         "build",
         "-ldflags",
         '''-w -s -extldflags "-static"''',
