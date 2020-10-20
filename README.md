@@ -1,3 +1,3 @@
 # Descrição
 
-Desefio curso FullCycle CI
+Desafio curso FullCycle CI
